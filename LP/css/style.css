@@ -48,6 +48,9 @@
   .con-skill  .card-body {
     height: 200px;
   }
+	.card img{
+		object-fit: contain;
+	}
 
   .card-text {
     font-size: 0.8rem;
