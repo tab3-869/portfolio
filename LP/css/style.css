@@ -1,0 +1,64 @@
+ body {
+    text-align: center;
+		margin-bottom: 0;
+  }
+
+  .wf-notosansjapanese { 
+    font-family: "Noto Sans JP";
+  }
+
+  .jumbotron {
+    height: 400px;
+    background: url("../img/img-bkgr.jpg") center no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
+  }
+
+  .jumbotron-container{
+    position: relative;
+    top: 40%
+  }
+
+  .main-content{
+  }
+
+  i {
+    margin-right: 5px;
+  }
+
+  #prf-img {
+    width: 250px;
+    height: auto;
+  }
+  .section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+  }
+
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .two-colum-text p {
+    text-align: left;
+  }
+
+  .con-skill  .card-body {
+    height: 200px;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+ 	
+	#works img{
+		height: 230px;
+	}
+
+	#footer p{
+    margin-bottom: 0;
+  }
+
+

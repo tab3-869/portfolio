@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../LP/css/alg-style.css">	
+		
+		<title>Algorithm</title>
+  </head>
+  <body>
+		<nav class="navbar navbar-expand-sm navbar-light bg-light">
+		<a class="navbar-brand" href="index.html">Algorithm</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="insertion.html">挿入ソート </a>
+					<a class="nav-item nav-link active" href="bubble.html">バブルソート<span class="sr-only">(current)</span></a>
+				</div>
+			</div>
+		</nav>
+
+	<div class="contents">
+		<div class="container">
+			<div class="inputArea col-sm">
+			<h2>バブルソート</h2>
+				
+				<p>数字を入力してください</p>
+				<form id="form">
+					<input type="text" class="inputNumber" name="number1">
+					<input type="text" class="inputNumber" name="number2">
+					<input type="text" class="inputNumber" name="number3">
+					<input type="text" class="inputNumber" name="number4">
+					<input type="text" class="inputNumber" name="number5">
+				 <p><button type="submit" value="実行" id="sort">ソートを実行する</button>
+				 <button type="reset" value="reset" id="clearData">clear</button></p>
+				</form>	
+			</div>
+		
+			<div class="methodArea col-sm">
+				<p><hr>ソート処理</p>
+				<div id="doMethod">
+				</div>	
+			</div>
+			
+			<div class="resultArea col-sm">
+				<p><hr>結果</p>
+				<div id="result">
+				
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+
+	<footer class="bg-light">
+
+		<p>algorithm</p>
+
+	</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<!--   algorithm   -->
+		<script>
+			let algArray = new Array();
+			let doMethodArray = "";
+
+			document.getElementById('form').onsubmit = function(){
+				//input
+				algArray[0] = Number(document.getElementById("form").number1.value);
+				algArray[1] = Number(document.getElementById("form").number2.value);
+				algArray[2] = Number(document.getElementById("form").number3.value);
+				algArray[3] = Number(document.getElementById("form").number4.value);
+				algArray[4] = Number(document.getElementById("form").number5.value);
+				let cnt = 0;	
+				let trace = "";
+				reflesh();
+				let flag = 1;
+				//sort
+				for(let i = 0;flag == 1;i++){
+					flag = 0;
+					for(let j = 4;j >= i+1;j--){
+						if(algArray[j] < algArray[j - 1]){
+							let tmp = 0;
+							tmp = algArray[j];
+							algArray[j] = algArray[j - 1];
+							algArray[j - 1] = tmp;
+							flag = 1;
+						}
+					trace = "";
+				//trace
+					for(let k = 0;k < 5;k++){
+						if(k > 0){
+							trace = trace + " " + algArray[k];
+						}else{
+							trace += algArray[k];
+						}
+					}
+					doMethodArray =  doMethodArray + "<p>" + cnt + " :  " + trace + "</p>";
+					cnt++;	
+					}
+				}
+				//output
+				document.getElementById("doMethod").innerHTML = doMethodArray;
+
+				document.getElementById("result").innerHTML = trace;
+				return false;
+					
+				}
+				function reflesh(){
+				document.getElementById("doMethod").innerHTML = "";
+				document.getElementById("result").innerHTML = "";
+				doMethodArray = "";
+				trace = "";
+				}	
+				
+				document.getElementById("clearData").onclick = function() {
+					reflesh(); 
+				}
+		</script>
+
+
+
+  </body>
+</html>
